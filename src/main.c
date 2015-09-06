@@ -213,7 +213,7 @@ void init() {
 
 void deinit() {
   gbitmap_destroy(s_background_bitmap);
-  bitmap_layer_destroy(s_background_layer);
+  bitmap_layer_destroy(s_background_layer); 
   text_layer_destroy(text_layer);
   window_destroy(window);
 

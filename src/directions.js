@@ -10,8 +10,8 @@ var xhrRequest = function (url, type, callback) {
 function locationSuccess(pos) {
   lat = String(pos.coords.latitude).replace(".","p");
   lon = String(pos.coords.longitude).replace(".","p");
-  // lat = String("40").replace(".","p");
-  // lon = String("-105").replace(".","p");
+  // lat = String("40.0175251").replace(".","p");
+  // lon = String("-105.284").replace(".","p");
   var URL = ['https://turnakitmapper.herokuapp.com/direction/', lat, '&', lon].join("");
 
   // Send request to OpenWeatherMap

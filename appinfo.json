@@ -1,14 +1,13 @@
 {
+    "uuid": "35ca802e-4de2-4bd1-9ea6-42a7a1f50ad8",
+    "longName": "turnakitC",
+    "shortName": "turnakitC",
+    "companyName": "jamiekaw@comcast.net",
     "appKeys": {
         "KEY_DIRECTION": 0,
-        "KEY_DISTANCE": 1
+        "KEY_DISTANCE": 1,
+        "dummy": 0
     },
-    "capabilities": [
-        ""
-    ],
-    "companyName": "jamiekaw@comcast.net",
-    "longName": "turnakitC",
-    "projectType": "native",
     "resources": {
         "media": [
             {
@@ -34,12 +33,9 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "turnakitC",
     "targetPlatforms": [
-        "aplite",
         "basalt"
     ],
-    "uuid": "35ca802e-4de2-4bd1-9ea6-42a7a1f50ad8",
     "versionLabel": "1.0",
     "watchapp": {
         "watchface": false

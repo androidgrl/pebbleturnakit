@@ -8,14 +8,14 @@ var xhrRequest = function (url, type, callback) {
 };
 
 function locationSuccess(pos) {
-    lat = String(pos.coords.latitude).replace(".","p");
-    lon = String(pos.coords.longitude).replace(".","p");
-//   lat = String("40.0174031").replace(".","p");
-//   lon = String("-105.2833811").replace(".","p");
+  lat = String(pos.coords.latitude).replace(".","p");
+  lon = String(pos.coords.longitude).replace(".","p");
+  // lat = String("40.0175251").replace(".","p");
+  // lon = String("-105.284").replace(".","p");
   var URL = ['https://turnakitmapper.herokuapp.com/direction/', lat, '&', lon].join("");
-  
+
   // Send request to OpenWeatherMap
-  xhrRequest(URL, 'GET', 
+  xhrRequest(URL, 'GET',
     function(response) {
       var response = JSON.parse(response);
 
@@ -23,7 +23,7 @@ function locationSuccess(pos) {
       var distance = response.distance;
       console.log(response);
       console.log(direction,distance);
-      
+
       var dictionary = {
         "KEY_DIRECTION": direction,
         "KEY_DISTANCE": distance
@@ -32,13 +32,13 @@ function locationSuccess(pos) {
       // Send to Pebble
       Pebble.sendAppMessage(dictionary,
         function(e) {
-          console.log("Weather info sent to Pebble successfully!");
+          console.log("Direction info sent to Pebble successfully!");
         },
         function(e) {
-          console.log("Error sending weather info to Pebble!");
+          console.log("Error sending direction info to Pebble!");
         }
       );
-    }      
+    }
   );
 }
 
@@ -54,14 +54,14 @@ function getDir() {
   );
 }
 
-setInterval(getDir, 7500);
+setInterval(getDir, 3000);
 
 // Listen for when the watchface is opened
-Pebble.addEventListener('ready', 
+Pebble.addEventListener('ready',
   function(e) {
     console.log("PebbleKit JS ready!");
 
-    // Get the initial weather
+    // Get the initial direction
     getDir();
   }
 );
